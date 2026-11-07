@@ -10,7 +10,7 @@ classifier can say how sure it is, with a guarantee that it is wrong at most a c
 |---|---|
 | [`cw1-nearest-neighbour-conformal/`](cw1-nearest-neighbour-conformal) | Assignment 1: 1-NN, k-NN and a nearest-neighbour conformal predictor written from scratch in NumPy |
 | [`cw2-svm-conformal/`](cw2-svm-conformal) | Assignment 2: support vector machines with scaling pipelines, grid-searched hyperparameters and a cross-conformal predictor |
-| [`labs/`](labs) | Worksheet 6 (scaling and Lasso regression on the diabetes data) and worksheet 8 (neural networks and SVMs) |
+| [`labs/`](labs) | Worksheets 4 (k-NN regression), 5 (linear models), 6 (scaling and Lasso) and 8 (neural networks and SVMs) |
 
 ## Assignment 1: nearest neighbours and conformal prediction
 
@@ -62,6 +62,12 @@ feature is a pixel on the same scale and what matters is the shape of the stroke
 
 ## Labs
 
+- **Worksheet 4:** k-NN regression on the 442-sample diabetes data. Sweeping K from 3 to 120, a single train/test
+  split peaks at K = 32 (R² 0.471) but 3-fold cross-validation peaks earlier, at K = 18 (R² 0.444); the single
+  split's optimum is the luckier, less trustworthy one.
+- **Worksheet 5:** least squares, Ridge and Lasso. With the diabetes features expanded to all 65 degree-2 terms,
+  plain least squares overfits (R² 0.605 train, 0.424 test). The best Ridge setting, α = 0.1, reaches 0.495 on
+  test, and Lasso at α = 0.01 reaches 0.514 on test while keeping only 16 of the 65 coefficients; at α = 1 it keeps 3 and underfits.
 - **Worksheet 6:** Lasso regression on the 442-sample diabetes data, the effect of fitting a StandardScaler on the
   training data only, and choosing the regularisation strength by cross-validation.
 - **Worksheet 8:** a multi-layer perceptron on the two-moons data, a linear SVM on the forge data, and an RBF SVM
